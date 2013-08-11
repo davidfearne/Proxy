@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.symantec.com/2009/01/ProvisioningApi/Data" elementFormDefault="qualified" targetNamespace="http://www.symantec.com/2009/01/ProvisioningApi/Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Symantec.ProvisioningApi.Contract" />
+  <xs:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="EchoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Request" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EchoRequest" nillable="true" type="tns:EchoRequest" />
+  <xs:complexType name="EchoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EchoResponse" nillable="true" type="tns:EchoResponse" />
+  <xs:complexType name="ProvisioningApiFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisioningApiFault" nillable="true" type="tns:ProvisioningApiFault" />
+  <xs:complexType name="ProvisionOrganisationRequest">
+    <xs:sequence>
+      <xs:element name="OrganisationName" nillable="true" type="xs:string" />
+      <xs:element name="PartnersCustomerId" type="xs:int" />
+      <xs:element name="CustomerExternalReference" nillable="true" type="xs:string" />
+      <xs:element name="IsoCountryCode" nillable="true" type="xs:string" />
+      <xs:element name="ContactFirstName" nillable="true" type="xs:string" />
+      <xs:element name="ContactLastName" nillable="true" type="xs:string" />
+      <xs:element name="ContactEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SicCode" nillable="true" type="xs:string" />
+      <xs:element name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+      <xs:element name="Town" nillable="true" type="xs:string" />
+      <xs:element name="State" nillable="true" type="xs:string" />
+      <xs:element name="Zip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element name="InitialNumberOfUser" type="xs:int" />
+      <xs:element name="BasedOnCustomerTemplateId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReseller" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WebRoutes" nillable="true" type="tns:ArrayOfWebRoute" />
+      <xs:element minOccurs="0" name="ProvisionWebAntiMalwareService" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProvisionWebUrlFilteringService" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumberOfRoamingLicenses" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProvisionHostedEndPointService" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumberOfHostedEndPointLicenses" type="xs:int" />
+      <xs:element minOccurs="0" name="IsHostedEndpointTrial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HostedEndpointEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrmId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionOrganisationRequest" nillable="true" type="tns:ProvisionOrganisationRequest" />
+  <xs:complexType name="ArrayOfWebRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WebRoute" nillable="true" type="tns:WebRoute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWebRoute" nillable="true" type="tns:ArrayOfWebRoute" />
+  <xs:complexType name="WebRoute">
+    <xs:sequence>
+      <xs:element name="StartRange" nillable="true" type="xs:string" />
+      <xs:element name="EndRange" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebRoute" nillable="true" type="tns:WebRoute" />
+  <xs:complexType name="ProvisionOrganisationResponse">
+    <xs:sequence>
+      <xs:element name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element name="Password" nillable="true" type="xs:string" />
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="HasErrors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorDetail" nillable="true" type="tns:ArrayOfErrorDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionOrganisationResponse" nillable="true" type="tns:ProvisionOrganisationResponse" />
+  <xs:complexType name="ArrayOfErrorDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorDetail" nillable="true" type="tns:ErrorDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrorDetail" nillable="true" type="tns:ArrayOfErrorDetail" />
+  <xs:complexType name="ErrorDetail">
+    <xs:sequence>
+      <xs:element name="Code" nillable="true" type="xs:string" />
+      <xs:element name="Message" nillable="true" type="xs:string" />
+      <xs:element name="Detail" nillable="true" type="xs:string" />
+      <xs:element name="Service" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorDetail" nillable="true" type="tns:ErrorDetail" />
+  <xs:complexType name="SuspendCustomerRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SuspendCustomerRequest" nillable="true" type="tns:SuspendCustomerRequest" />
+  <xs:complexType name="UnSuspendCustomerRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnSuspendCustomerRequest" nillable="true" type="tns:UnSuspendCustomerRequest" />
+  <xs:complexType name="ProvisionWebAntiMalwareServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="BasedOnCustomerTemplateId" type="xs:int" />
+      <xs:element minOccurs="0" name="WebRoutes" nillable="true" type="tns:ArrayOfWebRoute" />
+      <xs:element minOccurs="0" name="NumberOfRoamingLicenses" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionWebAntiMalwareServiceRequest" nillable="true" type="tns:ProvisionWebAntiMalwareServiceRequest" />
+  <xs:complexType name="ProvisionWebAntiMalwareServiceResponse">
+    <xs:sequence>
+      <xs:element name="HasErrors" type="xs:boolean" />
+      <xs:element name="ErrorDetail" nillable="true" type="tns:ArrayOfErrorDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionWebAntiMalwareServiceResponse" nillable="true" type="tns:ProvisionWebAntiMalwareServiceResponse" />
+  <xs:complexType name="DeprovisionWebAntiMalwareServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionWebAntiMalwareServiceRequest" nillable="true" type="tns:DeprovisionWebAntiMalwareServiceRequest" />
+  <xs:complexType name="ProvisionWebUrlFilteringServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="BasedOnCustomerTemplateId" type="xs:int" />
+      <xs:element minOccurs="0" name="WebRoutes" nillable="true" type="tns:ArrayOfWebRoute" />
+      <xs:element minOccurs="0" name="NumberOfRoamingLicenses" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionWebUrlFilteringServiceRequest" nillable="true" type="tns:ProvisionWebUrlFilteringServiceRequest" />
+  <xs:complexType name="ProvisionWebUrlFilteringServiceResponse">
+    <xs:sequence>
+      <xs:element name="HasErrors" type="xs:boolean" />
+      <xs:element name="ErrorDetail" nillable="true" type="tns:ArrayOfErrorDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionWebUrlFilteringServiceResponse" nillable="true" type="tns:ProvisionWebUrlFilteringServiceResponse" />
+  <xs:complexType name="DeprovisionWebUrlFilteringServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionWebUrlFilteringServiceRequest" nillable="true" type="tns:DeprovisionWebUrlFilteringServiceRequest" />
+  <xs:complexType name="ProvisionEmailDomainRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainName" nillable="true" type="xs:string" />
+      <xs:element name="BasedOnDomainTemplateId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProvisionEmailAntiVirusService" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProvisionEmailAntiSpamService" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailAntiSpamServiceBulkMailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvisionEmailImageControlService" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailImageControlServiceAdministratorEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvisionEmailContentControlService" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailContentControlServiceAdministratorEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailContentControlServiceNotificationFromEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OutboundRoutes" nillable="true" type="tns:OutboundEmailRoutes" />
+      <xs:element minOccurs="0" name="InboundRoutes" nillable="true" type="tns:InboundEmailRoutes" />
+      <xs:element minOccurs="0" name="ValidationKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NonProvisionedDomainId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CopyFromExistingDomain" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OutboundHostedProviders" nillable="true" type="tns:OutboundHostedEmailProviders" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionEmailDomainRequest" nillable="true" type="tns:ProvisionEmailDomainRequest" />
+  <xs:complexType name="OutboundEmailRoutes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConfirmationEmailAddress" nillable="true" type="xs:string" />
+      <xs:element name="BypassTechnicalChecks" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BypassTechnicalChecksReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Routes" nillable="true" type="tns:ArrayOfOutboundRoute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutboundEmailRoutes" nillable="true" type="tns:OutboundEmailRoutes" />
+  <xs:complexType name="ArrayOfOutboundRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutboundRoute" nillable="true" type="tns:OutboundRoute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOutboundRoute" nillable="true" type="tns:ArrayOfOutboundRoute" />
+  <xs:complexType name="OutboundRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubnetMask" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutboundRoute" nillable="true" type="tns:OutboundRoute" />
+  <xs:complexType name="InboundEmailRoutes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConfirmationEmailAddress" nillable="true" type="xs:string" />
+      <xs:element name="BypassTechnicalChecks" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BypassTechnicalChecksReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Routes" nillable="true" type="tns:ArrayOfInboundRoute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InboundEmailRoutes" nillable="true" type="tns:InboundEmailRoutes" />
+  <xs:complexType name="ArrayOfInboundRoute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InboundRoute" nillable="true" type="tns:InboundRoute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInboundRoute" nillable="true" type="tns:ArrayOfInboundRoute" />
+  <xs:complexType name="InboundRoute">
+    <xs:sequence>
+      <xs:element name="Address" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InboundRoute" nillable="true" type="tns:InboundRoute" />
+  <xs:complexType name="OutboundHostedEmailProviders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HostedEmailProvider" nillable="true" type="tns:ArrayOfOutboundHostedEmailProvider" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutboundHostedEmailProviders" nillable="true" type="tns:OutboundHostedEmailProviders" />
+  <xs:complexType name="ArrayOfOutboundHostedEmailProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutboundHostedEmailProvider" nillable="true" type="tns:OutboundHostedEmailProvider" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOutboundHostedEmailProvider" nillable="true" type="tns:ArrayOfOutboundHostedEmailProvider" />
+  <xs:complexType name="OutboundHostedEmailProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutboundHostedEmailProvider" nillable="true" type="tns:OutboundHostedEmailProvider" />
+  <xs:complexType name="ProvisionEmailDomainResponse">
+    <xs:sequence>
+      <xs:element name="DomainId" type="xs:int" />
+      <xs:element name="HasErrors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorDetails" nillable="true" type="tns:ArrayOfErrorDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionEmailDomainResponse" nillable="true" type="tns:ProvisionEmailDomainResponse" />
+  <xs:complexType name="DeleteEmailDomainRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteEmailDomainRequest" nillable="true" type="tns:DeleteEmailDomainRequest" />
+  <xs:complexType name="DeleteAllEmailDomainsRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReasonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteAllEmailDomainsRequest" nillable="true" type="tns:DeleteAllEmailDomainsRequest" />
+  <xs:complexType name="ProvisionEmailAntiVirusServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainId" type="xs:int" />
+      <xs:element name="BasedOnDomainTemplateId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionEmailAntiVirusServiceRequest" nillable="true" type="tns:ProvisionEmailAntiVirusServiceRequest" />
+  <xs:complexType name="ProvisionEmailAntiSpamServiceRequest">
+    <xs:sequence>
+      <xs:element name="BasedOnDomainTemplateId" type="xs:int" />
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainId" type="xs:int" />
+      <xs:element minOccurs="0" name="BulkMailAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionEmailAntiSpamServiceRequest" nillable="true" type="tns:ProvisionEmailAntiSpamServiceRequest" />
+  <xs:complexType name="DeprovisionEmailAntiSpamServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionEmailAntiSpamServiceRequest" nillable="true" type="tns:DeprovisionEmailAntiSpamServiceRequest" />
+  <xs:complexType name="ProvisionBackupServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="Capacity" type="xs:int" />
+      <xs:element name="IsTrial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionBackupServiceRequest" nillable="true" type="tns:ProvisionBackupServiceRequest" />
+  <xs:complexType name="DeprovisionBackupServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionBackupServiceRequest" nillable="true" type="tns:DeprovisionBackupServiceRequest" />
+  <xs:complexType name="ProvisionEmailImageControlServiceRequest">
+    <xs:sequence>
+      <xs:element name="BasedOnDomainTemplateId" type="xs:int" />
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainId" type="xs:int" />
+      <xs:element name="AdministratorEmailAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionEmailImageControlServiceRequest" nillable="true" type="tns:ProvisionEmailImageControlServiceRequest" />
+  <xs:complexType name="DeprovisionEmailImageControlServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionEmailImageControlServiceRequest" nillable="true" type="tns:DeprovisionEmailImageControlServiceRequest" />
+  <xs:complexType name="ProvisionEmailContentControlServiceRequest">
+    <xs:sequence>
+      <xs:element name="BasedOnDomainTemplateId" type="xs:int" />
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainId" type="xs:int" />
+      <xs:element name="AdministratorEmailAddress" nillable="true" type="xs:string" />
+      <xs:element name="NotificationFromEmailAddress" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Symantec.ProvisioningApi.Contract" minOccurs="0" name="ProvisioningOption" type="q1:ProvisioningOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionEmailContentControlServiceRequest" nillable="true" type="tns:ProvisionEmailContentControlServiceRequest" />
+  <xs:complexType name="DeprovisionEmailContentControlServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionEmailContentControlServiceRequest" nillable="true" type="tns:DeprovisionEmailContentControlServiceRequest" />
+  <xs:complexType name="ProvisionMultiProtocolArchivingServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="BasedOnCustomerTemplateId" type="xs:int" />
+      <xs:element minOccurs="0" name="MultiProtocolArchivingServiceLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActiveUserCount" type="xs:int" />
+      <xs:element minOccurs="0" name="InactiveUserCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ArchiveRetentionPeriodMonths" type="xs:int" />
+      <xs:element minOccurs="0" name="MaximumArchiveRetentionPeriodMonths" type="xs:int" />
+      <xs:element minOccurs="0" name="MultiProtocolArchivingAccountStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KitchenClusterId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProvisioningGroupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ClusterSegment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MultiProtocolArchivingServiceTypes" nillable="true" type="tns:ArrayOfMultiProtocolArchivingServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionMultiProtocolArchivingServiceRequest" nillable="true" type="tns:ProvisionMultiProtocolArchivingServiceRequest" />
+  <xs:complexType name="ArrayOfMultiProtocolArchivingServiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MultiProtocolArchivingServiceType" type="tns:MultiProtocolArchivingServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMultiProtocolArchivingServiceType" nillable="true" type="tns:ArrayOfMultiProtocolArchivingServiceType" />
+  <xs:simpleType name="MultiProtocolArchivingServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InstantMessaging">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Web">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MultiProtocolArchivingServiceType" nillable="true" type="tns:MultiProtocolArchivingServiceType" />
+  <xs:complexType name="DeprovisionMultiProtocolArchivingServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="MultiProtocolArchivingServiceTypes" nillable="true" type="tns:ArrayOfMultiProtocolArchivingServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionMultiProtocolArchivingServiceRequest" nillable="true" type="tns:DeprovisionMultiProtocolArchivingServiceRequest" />
+  <xs:complexType name="ProvisionHostedEndPointServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="TotalEndPointCount" type="xs:int" />
+      <xs:element name="IsTrial" type="xs:boolean" />
+      <xs:element name="HasOtherServices" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionHostedEndPointServiceRequest" nillable="true" type="tns:ProvisionHostedEndPointServiceRequest" />
+  <xs:complexType name="DeprovisionHostedEndpointServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionHostedEndpointServiceRequest" nillable="true" type="tns:DeprovisionHostedEndpointServiceRequest" />
+  <xs:complexType name="UpdateWebRoamingLicenseCountRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="NumberOfRoamingLicenses" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateWebRoamingLicenseCountRequest" nillable="true" type="tns:UpdateWebRoamingLicenseCountRequest" />
+  <xs:complexType name="ValidateDomainRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element name="DomainName" nillable="true" type="xs:string" />
+      <xs:element name="Mailbox" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidateDomainRequest" nillable="true" type="tns:ValidateDomainRequest" />
+  <xs:complexType name="ProvisionEntitlementRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Symantec.ProvisioningApi.Contract" minOccurs="0" name="Service" type="q2:SimpleServiceType" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element name="Capacity" nillable="true" type="xs:int" />
+      <xs:element name="IsTrial" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseELS" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionEntitlementRequest" nillable="true" type="tns:ProvisionEntitlementRequest" />
+  <xs:complexType name="DeprovisionEntitlementRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Symantec.ProvisioningApi.Contract" minOccurs="0" name="Service" type="q3:SimpleServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionEntitlementRequest" nillable="true" type="tns:DeprovisionEntitlementRequest" />
+  <xs:complexType name="DeprovisionWebDataLossPreventionServiceRequest">
+    <xs:sequence>
+      <xs:element name="CustomerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeprovisionWebDataLossPreventionServiceRequest" nillable="true" type="tns:DeprovisionWebDataLossPreventionServiceRequest" />
+</xs:schema>

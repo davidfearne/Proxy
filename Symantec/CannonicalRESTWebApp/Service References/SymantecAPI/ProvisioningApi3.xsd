@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.symantec.com/2009/01/ProvisioningApi/" elementFormDefault="qualified" targetNamespace="http://www.symantec.com/2009/01/ProvisioningApi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd2" namespace="http://www.symantec.com/2009/01/ProvisioningApi/Data" />
+  <xs:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Symantec.ProvisioningApi.Contract" />
+  <xs:element name="Echo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q1:EchoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EchoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="EchoResult" nillable="true" type="q2:EchoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionOrganisation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q3:ProvisionOrganisationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionOrganisationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="ProvisionOrganisationResult" nillable="true" type="q4:ProvisionOrganisationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuspendCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q5:SuspendCustomerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuspendCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnSuspendCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q6:UnSuspendCustomerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnSuspendCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionWebAntiMalwareService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q7:ProvisionWebAntiMalwareServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionWebAntiMalwareServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="ProvisionWebAntiMalwareServiceResult" nillable="true" type="q8:ProvisionWebAntiMalwareServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionWebAntiMalwareService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q9:DeprovisionWebAntiMalwareServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionWebAntiMalwareServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionWebUrlFilteringService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q10:ProvisionWebUrlFilteringServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionWebUrlFilteringServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="ProvisionWebUrlFilteringServiceResult" nillable="true" type="q11:ProvisionWebUrlFilteringServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionWebUrlFilteringService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q12:DeprovisionWebUrlFilteringServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionWebUrlFilteringServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q13:ProvisionEmailDomainRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="ProvisionEmailDomainResult" nillable="true" type="q14:ProvisionEmailDomainResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEmailDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q15:DeleteEmailDomainRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEmailDomainResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllEmailDomains">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q16:DeleteAllEmailDomainsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllEmailDomainsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailAntiVirusService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q17:ProvisionEmailAntiVirusServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailAntiVirusServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailAntiSpamService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q18:ProvisionEmailAntiSpamServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailAntiSpamServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEmailAntiSpamService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q19:DeprovisionEmailAntiSpamServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEmailAntiSpamServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionBackupService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q20:ProvisionBackupServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionBackupServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionBackupService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q21:DeprovisionBackupServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionBackupServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailImageControlService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q22:ProvisionEmailImageControlServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailImageControlServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEmailImageControlService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q23:DeprovisionEmailImageControlServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEmailImageControlServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailContentControlService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q24:ProvisionEmailContentControlServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEmailContentControlServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEmailContentControlService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q25:DeprovisionEmailContentControlServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEmailContentControlServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionMultiProtocolArchivingService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q26:ProvisionMultiProtocolArchivingServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionMultiProtocolArchivingServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionMultiProtocolArchivingService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q27:DeprovisionMultiProtocolArchivingServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionMultiProtocolArchivingServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionHostedEndPointService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q28:ProvisionHostedEndPointServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionHostedEndPointServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionHostedEndPointService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q29:DeprovisionHostedEndpointServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionHostedEndPointServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWebRoamingLicenseCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q30:UpdateWebRoamingLicenseCountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWebRoamingLicenseCountResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q31:ValidateDomainRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateDomainResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEntitlement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q32:ProvisionEntitlementRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionEntitlementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEntitlement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q33:DeprovisionEntitlementRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionEntitlementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionWebDataLossPreventionService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Symantec.ProvisioningApi.Contract" minOccurs="0" name="request" nillable="true" type="q34:ProvisionWebDataLossPreventionServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProvisionWebDataLossPreventionServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionWebDataLossPreventionService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://www.symantec.com/2009/01/ProvisioningApi/Data" minOccurs="0" name="request" nillable="true" type="q35:DeprovisionWebDataLossPreventionServiceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeprovisionWebDataLossPreventionServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

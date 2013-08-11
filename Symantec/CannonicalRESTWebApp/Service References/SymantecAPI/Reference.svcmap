@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4af0b3c6-949e-4239-a53a-e05aa0a25c64" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.partnerdev.messagelabs.net/ProvisioningApi/live/ProvisioningApiWCF/ProvisioningApi.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProvisioningApi.xsd" MetadataType="Schema" ID="09cffec8-184f-4c2e-919f-22dfbe844113" SourceId="1" SourceUrl="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProvisioningApi.wsdl" MetadataType="Wsdl" ID="4b35d945-6de9-4202-aff2-cd8572cd6f31" SourceId="1" SourceUrl="https://api.partnerdev.messagelabs.net/ProvisioningApi/live/ProvisioningApiWCF/ProvisioningApi.svc?wsdl" />
+    <MetadataFile FileName="ProvisioningApi1.xsd" MetadataType="Schema" ID="06f7f66e-9bf3-471c-9ae2-b755e56c8dda" SourceId="1" SourceUrl="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProvisioningApi2.xsd" MetadataType="Schema" ID="9720a25a-e467-4658-9e04-63c993b3c987" SourceId="1" SourceUrl="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProvisioningApi1.wsdl" MetadataType="Wsdl" ID="d4e6c4cd-99ee-4eb3-bc6e-143bf4307b37" SourceId="1" SourceUrl="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProvisioningApi3.xsd" MetadataType="Schema" ID="425ae71e-b80c-457d-91fd-92e41bc90511" SourceId="1" SourceUrl="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

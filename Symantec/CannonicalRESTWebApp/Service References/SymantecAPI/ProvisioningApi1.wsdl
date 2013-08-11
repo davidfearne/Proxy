@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.symantec.com/2009/01/ProvisioningApi/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.symantec.com/2009/01/ProvisioningApi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.symantec.com/2009/01/ProvisioningApi/Imports">
+      <xsd:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd0" namespace="http://www.symantec.com/2009/01/ProvisioningApi/" />
+      <xsd:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd2" namespace="http://www.symantec.com/2009/01/ProvisioningApi/Data" />
+      <xsd:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://api.partnerdev.messagelabs.net/ProvisioningAPI/live/ProvisioningApiWCF/ProvisioningApi.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Symantec.ProvisioningApi.Contract" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProvisioningApi_Echo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Echo" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_Echo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EchoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_Echo_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q1:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionOrganisation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionOrganisation" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionOrganisation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionOrganisationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionOrganisation_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q2:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_SuspendCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuspendCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_SuspendCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuspendCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_SuspendCustomer_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q3:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_UnSuspendCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnSuspendCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_UnSuspendCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnSuspendCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_UnSuspendCustomer_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q4:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebAntiMalwareService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionWebAntiMalwareService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebAntiMalwareService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionWebAntiMalwareServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebAntiMalwareService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q5:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebAntiMalwareService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionWebAntiMalwareService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebAntiMalwareService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionWebAntiMalwareServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebAntiMalwareService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q6:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebUrlFilteringService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionWebUrlFilteringService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebUrlFilteringService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionWebUrlFilteringServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebUrlFilteringService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q7:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebUrlFilteringService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionWebUrlFilteringService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebUrlFilteringService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionWebUrlFilteringServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebUrlFilteringService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q8:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailDomain" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailDomain_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q9:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeleteEmailDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmailDomain" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeleteEmailDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmailDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeleteEmailDomain_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q10:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeleteAllEmailDomains_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllEmailDomains" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeleteAllEmailDomains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllEmailDomainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeleteAllEmailDomains_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q11:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailAntiVirusService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailAntiVirusService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailAntiVirusService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailAntiVirusServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailAntiVirusService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q12:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailAntiSpamService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailAntiSpamService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailAntiSpamService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailAntiSpamServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailAntiSpamService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q13:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailAntiSpamService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEmailAntiSpamService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailAntiSpamService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEmailAntiSpamServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailAntiSpamService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q14:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionBackupService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionBackupService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionBackupService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionBackupServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionBackupService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q15:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionBackupService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionBackupService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionBackupService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionBackupServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionBackupService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q16:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailImageControlService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailImageControlService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailImageControlService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailImageControlServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailImageControlService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q17:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailImageControlService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEmailImageControlService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailImageControlService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEmailImageControlServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailImageControlService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q18:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailContentControlService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailContentControlService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailContentControlService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEmailContentControlServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEmailContentControlService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q19:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailContentControlService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEmailContentControlService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailContentControlService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEmailContentControlServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEmailContentControlService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q20:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionMultiProtocolArchivingService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionMultiProtocolArchivingService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionMultiProtocolArchivingService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionMultiProtocolArchivingServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionMultiProtocolArchivingService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q21:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionMultiProtocolArchivingService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionMultiProtocolArchivingService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionMultiProtocolArchivingService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionMultiProtocolArchivingServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionMultiProtocolArchivingService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q22:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionHostedEndPointService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionHostedEndPointService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionHostedEndPointService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionHostedEndPointServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionHostedEndPointService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q23:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionHostedEndPointService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionHostedEndPointService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionHostedEndPointService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionHostedEndPointServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionHostedEndPointService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q24:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_UpdateWebRoamingLicenseCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebRoamingLicenseCount" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_UpdateWebRoamingLicenseCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebRoamingLicenseCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_UpdateWebRoamingLicenseCount_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q25:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ValidateDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateDomain" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ValidateDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ValidateDomain_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q26:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEntitlement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEntitlement" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEntitlement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionEntitlementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionEntitlement_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q27:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEntitlement_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEntitlement" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEntitlement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionEntitlementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionEntitlement_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q28:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebDataLossPreventionService_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionWebDataLossPreventionService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebDataLossPreventionService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionWebDataLossPreventionServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_ProvisionWebDataLossPreventionService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q29:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebDataLossPreventionService_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionWebDataLossPreventionService" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebDataLossPreventionService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeprovisionWebDataLossPreventionServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProvisioningApi_DeprovisionWebDataLossPreventionService_ProvisioningApiFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://www.symantec.com/2009/01/ProvisioningApi/Data" name="detail" element="q30:ProvisioningApiFault" />
+  </wsdl:message>
+  <wsdl:portType name="IProvisioningApi">
+    <wsdl:operation name="Echo">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/Echo" message="tns:IProvisioningApi_Echo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/EchoResponse" message="tns:IProvisioningApi_Echo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/EchoProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_Echo_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionOrganisation">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionOrganisation" message="tns:IProvisioningApi_ProvisionOrganisation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionOrganisationResponse" message="tns:IProvisioningApi_ProvisionOrganisation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionOrganisationProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionOrganisation_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuspendCustomer">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/SuspendCustomer" message="tns:IProvisioningApi_SuspendCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/SuspendCustomerResponse" message="tns:IProvisioningApi_SuspendCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/SuspendCustomerProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_SuspendCustomer_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnSuspendCustomer">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/UnSuspendCustomer" message="tns:IProvisioningApi_UnSuspendCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/UnSuspendCustomerResponse" message="tns:IProvisioningApi_UnSuspendCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/UnSuspendCustomerProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_UnSuspendCustomer_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionWebAntiMalwareService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebAntiMalwareService" message="tns:IProvisioningApi_ProvisionWebAntiMalwareService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebAntiMalwareServiceResponse" message="tns:IProvisioningApi_ProvisionWebAntiMalwareService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebAntiMalwareServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionWebAntiMalwareService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionWebAntiMalwareService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebAntiMalwareService" message="tns:IProvisioningApi_DeprovisionWebAntiMalwareService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebAntiMalwareServiceResponse" message="tns:IProvisioningApi_DeprovisionWebAntiMalwareService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebAntiMalwareServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionWebAntiMalwareService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionWebUrlFilteringService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebUrlFilteringService" message="tns:IProvisioningApi_ProvisionWebUrlFilteringService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebUrlFilteringServiceResponse" message="tns:IProvisioningApi_ProvisionWebUrlFilteringService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebUrlFilteringServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionWebUrlFilteringService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionWebUrlFilteringService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebUrlFilteringService" message="tns:IProvisioningApi_DeprovisionWebUrlFilteringService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebUrlFilteringServiceResponse" message="tns:IProvisioningApi_DeprovisionWebUrlFilteringService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebUrlFilteringServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionWebUrlFilteringService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEmailDomain">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailDomain" message="tns:IProvisioningApi_ProvisionEmailDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailDomainResponse" message="tns:IProvisioningApi_ProvisionEmailDomain_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailDomainProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionEmailDomain_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmailDomain">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeleteEmailDomain" message="tns:IProvisioningApi_DeleteEmailDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeleteEmailDomainResponse" message="tns:IProvisioningApi_DeleteEmailDomain_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeleteEmailDomainProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeleteEmailDomain_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllEmailDomains">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeleteAllEmailDomains" message="tns:IProvisioningApi_DeleteAllEmailDomains_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeleteAllEmailDomainsResponse" message="tns:IProvisioningApi_DeleteAllEmailDomains_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeleteAllEmailDomainsProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeleteAllEmailDomains_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEmailAntiVirusService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailAntiVirusService" message="tns:IProvisioningApi_ProvisionEmailAntiVirusService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailAntiVirusServiceResponse" message="tns:IProvisioningApi_ProvisionEmailAntiVirusService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailAntiVirusServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionEmailAntiVirusService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEmailAntiSpamService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailAntiSpamService" message="tns:IProvisioningApi_ProvisionEmailAntiSpamService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailAntiSpamServiceResponse" message="tns:IProvisioningApi_ProvisionEmailAntiSpamService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailAntiSpamServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionEmailAntiSpamService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionEmailAntiSpamService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailAntiSpamService" message="tns:IProvisioningApi_DeprovisionEmailAntiSpamService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailAntiSpamServiceResponse" message="tns:IProvisioningApi_DeprovisionEmailAntiSpamService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailAntiSpamServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionEmailAntiSpamService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionBackupService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionBackupService" message="tns:IProvisioningApi_ProvisionBackupService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionBackupServiceResponse" message="tns:IProvisioningApi_ProvisionBackupService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionBackupServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionBackupService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionBackupService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionBackupService" message="tns:IProvisioningApi_DeprovisionBackupService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionBackupServiceResponse" message="tns:IProvisioningApi_DeprovisionBackupService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionBackupServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionBackupService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEmailImageControlService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailImageControlService" message="tns:IProvisioningApi_ProvisionEmailImageControlService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailImageControlServiceResponse" message="tns:IProvisioningApi_ProvisionEmailImageControlService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailImageControlServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionEmailImageControlService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionEmailImageControlService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailImageControlService" message="tns:IProvisioningApi_DeprovisionEmailImageControlService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailImageControlServiceResponse" message="tns:IProvisioningApi_DeprovisionEmailImageControlService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailImageControlServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionEmailImageControlService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEmailContentControlService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailContentControlService" message="tns:IProvisioningApi_ProvisionEmailContentControlService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailContentControlServiceResponse" message="tns:IProvisioningApi_ProvisionEmailContentControlService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEmailContentControlServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionEmailContentControlService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionEmailContentControlService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailContentControlService" message="tns:IProvisioningApi_DeprovisionEmailContentControlService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailContentControlServiceResponse" message="tns:IProvisioningApi_DeprovisionEmailContentControlService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEmailContentControlServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionEmailContentControlService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionMultiProtocolArchivingService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionMultiProtocolArchivingService" message="tns:IProvisioningApi_ProvisionMultiProtocolArchivingService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionMultiProtocolArchivingServiceResponse" message="tns:IProvisioningApi_ProvisionMultiProtocolArchivingService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionMultiProtocolArchivingServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionMultiProtocolArchivingService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionMultiProtocolArchivingService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionMultiProtocolArchivingService" message="tns:IProvisioningApi_DeprovisionMultiProtocolArchivingService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionMultiProtocolArchivingServiceResponse" message="tns:IProvisioningApi_DeprovisionMultiProtocolArchivingService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionMultiProtocolArchivingServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionMultiProtocolArchivingService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionHostedEndPointService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionHostedEndPointService" message="tns:IProvisioningApi_ProvisionHostedEndPointService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionHostedEndPointServiceResponse" message="tns:IProvisioningApi_ProvisionHostedEndPointService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionHostedEndPointServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionHostedEndPointService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionHostedEndPointService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionHostedEndPointService" message="tns:IProvisioningApi_DeprovisionHostedEndPointService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionHostedEndPointServiceResponse" message="tns:IProvisioningApi_DeprovisionHostedEndPointService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionHostedEndPointServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionHostedEndPointService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebRoamingLicenseCount">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/UpdateWebRoamingLicenseCount" message="tns:IProvisioningApi_UpdateWebRoamingLicenseCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/UpdateWebRoamingLicenseCountResponse" message="tns:IProvisioningApi_UpdateWebRoamingLicenseCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/UpdateWebRoamingLicenseCountProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_UpdateWebRoamingLicenseCount_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateDomain">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ValidateDomain" message="tns:IProvisioningApi_ValidateDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ValidateDomainResponse" message="tns:IProvisioningApi_ValidateDomain_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ValidateDomainProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ValidateDomain_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionEntitlement">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEntitlement" message="tns:IProvisioningApi_ProvisionEntitlement_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEntitlementResponse" message="tns:IProvisioningApi_ProvisionEntitlement_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionEntitlementProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionEntitlement_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionEntitlement">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEntitlement" message="tns:IProvisioningApi_DeprovisionEntitlement_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEntitlementResponse" message="tns:IProvisioningApi_DeprovisionEntitlement_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionEntitlementProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionEntitlement_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionWebDataLossPreventionService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebDataLossPreventionService" message="tns:IProvisioningApi_ProvisionWebDataLossPreventionService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebDataLossPreventionServiceResponse" message="tns:IProvisioningApi_ProvisionWebDataLossPreventionService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/ProvisionWebDataLossPreventionServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_ProvisionWebDataLossPreventionService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeprovisionWebDataLossPreventionService">
+      <wsdl:input wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebDataLossPreventionService" message="tns:IProvisioningApi_DeprovisionWebDataLossPreventionService_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebDataLossPreventionServiceResponse" message="tns:IProvisioningApi_DeprovisionWebDataLossPreventionService_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.symantec.com/2009/01/ProvisioningApi/IProvisioningApi/DeprovisionWebDataLossPreventionServiceProvisioningApiFaultFault" name="ProvisioningApiFaultFault" message="tns:IProvisioningApi_DeprovisionWebDataLossPreventionService_ProvisioningApiFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
